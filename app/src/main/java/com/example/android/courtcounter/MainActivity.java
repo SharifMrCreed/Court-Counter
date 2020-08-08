@@ -15,12 +15,15 @@
  */
 package com.example.android.courtcounter;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
 
 /**
  * This activity keeps track of the basketball score for 2 teams.
@@ -32,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
     // Tracks the score for Team B
     int scoreTeamB = 0;
+
+    public ArrayList<Match> matches = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,20 +93,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Resets the score for both teams back to 0.
-     */
-    public void resetScore(View v) {
-        scoreTeamA = 0;
-        scoreTeamB = 0;
-        displayForTeamA(scoreTeamA);
-        displayForTeamB(scoreTeamB);
-    }
-
-    /**
      * Displays the given score for Team A.
      */
     public void displayForTeamA(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_a_score);
+        TextView scoreView = findViewById(R.id.tvAscore);
         scoreView.setText(String.valueOf(score));
     }
 
@@ -109,7 +104,23 @@ public class MainActivity extends AppCompatActivity {
      * Displays the given score for Team B.
      */
     public void displayForTeamB(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_b_score);
+        TextView scoreView = findViewById(R.id.team_b_score);
         scoreView.setText(String.valueOf(score));
+    }
+
+    public void saveScore(View view) {
+        TextView teamAName = findViewById(R.id.tvteamAName);
+        TextView teamBName = findViewById(R.id.tvteamBName);
+        TextView teamAScore = findViewById(R.id.tvAscore);
+        TextView teamBScore = findViewById(R.id.team_b_score);
+
+        Match match = new Match(teamAName.getText().toString(), teamBName.getText().toString(),
+                teamAScore.getText().toString(), teamBScore.getText().toString());
+        matches.add(match);
+        Toast.makeText(getApplicationContext(),"Match Score Saved", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(view.getContext(), MatchDetailsActivity.class);
+        intent.putExtra("Match", match);
+        startActivity(intent);
+
     }
 }
