@@ -10,8 +10,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.android.courtcounter.utils.ScoreContract;
-import com.example.android.courtcounter.utils.ScoreTableHelper;
+import com.example.android.courtcounter.db.ScoreContract;
+import com.example.android.courtcounter.db.ScoreTableHelper;
 
 public class MatchDetailsActivity extends AppCompatActivity {
 

@@ -3,6 +3,7 @@ package com.example.android.courtcounter;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.android.courtcounter.db.RetrieveData;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,6 +33,9 @@ public class MatchListActivity extends AppCompatActivity {
         RecyclerView nRecyclerView = findViewById(R.id.rvTeamList);
         nRecyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
         nRecyclerView.setAdapter(new MatchesAdapter(matches, this));
+
+        RetrieveData data = new RetrieveData(this);
+        data.dbData();
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

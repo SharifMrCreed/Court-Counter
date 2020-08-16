@@ -1,4 +1,4 @@
-package com.example.android.courtcounter.utils;
+package com.example.android.courtcounter.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

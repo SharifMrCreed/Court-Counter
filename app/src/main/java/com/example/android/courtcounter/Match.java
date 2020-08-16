@@ -17,6 +17,16 @@ public class Match implements Parcelable {
         this.teamBScore = teamBScore;
     }
 
+    @Override
+    public String toString() {
+        return "Match{" +
+                "teamAName='" + teamAName + '\'' +
+                ", teamBName='" + teamBName + '\'' +
+                ", teamAScore='" + teamAScore + '\'' +
+                ", teamBScore='" + teamBScore + '\'' +
+                '}';
+    }
+
     protected Match(Parcel in) {
         teamAName = in.readString();
         teamBName = in.readString();

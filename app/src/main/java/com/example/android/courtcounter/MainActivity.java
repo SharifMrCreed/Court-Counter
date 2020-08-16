@@ -27,8 +27,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.android.courtcounter.utils.ScoreContract;
-import com.example.android.courtcounter.utils.ScoreTableHelper;
+import com.example.android.courtcounter.db.ScoreContract;
+import com.example.android.courtcounter.db.ScoreTableHelper;
 
 import java.util.ArrayList;
 
