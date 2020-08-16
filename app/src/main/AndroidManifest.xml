@@ -7,7 +7,8 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
-        <activity android:name=".MatchDetailsActivity"></activity>
+        <activity android:name=".SetTeamNames"/>
+        <activity android:name=".MatchDetailsActivity" />
         <activity
             android:name=".MatchListActivity"
             android:label="@string/title_activity_match_list"
@@ -20,7 +21,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"></activity>
+            android:label="@string/app_name" />
     </application>
 
 </manifest>

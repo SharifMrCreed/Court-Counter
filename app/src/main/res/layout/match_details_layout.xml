@@ -123,6 +123,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/text_view_pet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
             <EditText
                 android:id="@+id/mlComments"
                 android:layout_width="match_parent"

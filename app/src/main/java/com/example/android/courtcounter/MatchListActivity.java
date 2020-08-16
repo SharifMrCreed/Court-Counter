@@ -25,6 +25,10 @@ public class MatchListActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         ArrayList<Match> matches = dummyMatches();
+        Match match = getIntent().getParcelableExtra("Match");
+        if (match != null){
+            matches.add(match);
+        }
         RecyclerView nRecyclerView = findViewById(R.id.rvTeamList);
         nRecyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
         nRecyclerView.setAdapter(new MatchesAdapter(matches, this));
@@ -33,7 +37,7 @@ public class MatchListActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MatchListActivity.this, MainActivity.class);
+                Intent intent = new Intent(MatchListActivity.this, SetTeamNames.class);
                 startActivity(intent);
             }
         });
@@ -43,7 +47,7 @@ public class MatchListActivity extends AppCompatActivity {
         ArrayList<Match> matches = new ArrayList<>();
         Random random = new Random();
 
-        for(int i =1; i <= 21; i++){
+        for(int i =1; i <= 15; i++){
 
             String display3;
             String display4;

@@ -7,9 +7,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -28,7 +25,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-medium"
                         android:gravity="center"
-                        android:text="Team A"
+                        android:text="@string/team_a"
                         android:textColor="#FB8C00"
                         android:textSize="14sp" />
 
@@ -38,7 +35,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:gravity="center"
-                        android:text="0"
+                        android:text="@string/_0"
                         android:textColor="#000000"
                         android:textSize="24sp" />
 
@@ -62,7 +59,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-medium"
                         android:gravity="center"
-                        android:text="Team B"
+                        android:text="@string/team_b"
                         android:textColor="#FB8C00"
                         android:textSize="14sp" />
 
@@ -72,13 +69,12 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:gravity="center"
-                        android:text="0"
+                        android:text="@string/_0"
                         android:textColor="#000000"
                         android:textSize="24sp" />
 
                 </LinearLayout>
             </LinearLayout>
 
-        </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </FrameLayout>
