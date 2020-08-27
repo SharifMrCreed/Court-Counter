@@ -25,7 +25,10 @@ public class MatchListActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ArrayList<Match> matches = dummyMatches();
+        RetrieveData data = new RetrieveData(this);
+
+//        ArrayList<Match> matches = dummyMatches();
+        ArrayList<Match> matches = data.dbData();
         Match match = getIntent().getParcelableExtra("Match");
         if (match != null){
             matches.add(match);
@@ -33,9 +36,9 @@ public class MatchListActivity extends AppCompatActivity {
         RecyclerView nRecyclerView = findViewById(R.id.rvTeamList);
         nRecyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
         nRecyclerView.setAdapter(new MatchesAdapter(matches, this));
+        nRecyclerView.getAdapter().notifyDataSetChanged();
 
-        RetrieveData data = new RetrieveData(this);
-        data.dbData();
+
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
